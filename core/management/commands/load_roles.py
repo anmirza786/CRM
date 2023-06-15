@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from accounts.models import Role
+from core.models import Role
 
 Roles_Seeder = [
     {

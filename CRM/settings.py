@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'core',
-    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +60,10 @@ EMAIL_HOST_USER = 'bbc9b816f3b746'
 EMAIL_HOST_PASSWORD = '711642a77a71f1'
 EMAIL_PORT = '2525'
 
+LOGIN_REDIRECT_URL = '/login'
+LOGIN_URL = '/login'
+LOGOUT_REDIRECT_URL = '/login'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -76,7 +79,7 @@ TEMPLATES = [
         },
     },
 ]
-AUTH_USER_MODEL = 'accounts.UserAccount'
+AUTH_USER_MODEL = 'core.UserAccount'
 WSGI_APPLICATION = 'CRM.wsgi.application'
 
 

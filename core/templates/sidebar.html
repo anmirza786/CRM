@@ -1,0 +1,261 @@
+{% url 'dashboard' as dashboard %}
+<aside
+  id="logo-sidebar"
+  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+  aria-label="Sidebar"
+>
+  <div
+    class="h-full flex flex-col justify-between px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800"
+  >
+    <div class="text-[#8E8EA9]">
+      <p class="p-4 font-[700] text-[14px] text-[#666687]">GENERAL</p>
+      <ul class="space-y-2 font-medium px-2">
+        <li>
+          <a
+            href="{% url 'dashboard' %}"
+            class="{% if request.path == dashboard %}active-dashboard{% endif %} flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 12 12"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 6.66667H5.33333V0H0V6.66667ZM0 12H5.33333V8H0V12ZM6.66667 12H12V5.33333H6.66667V12ZM6.66667 0V4H12V0H6.66667Z"
+              />
+            </svg>
+
+            <span class="ml-3">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33337 4H14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.33337 8H14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.33337 12H14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 4H2.006"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 8H2.006"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 12H2.006"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="ml-3">CRM</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_15421_1903)">
+                <path
+                  d="M14.1399 10.5934C13.7158 11.5964 13.0525 12.4802 12.2079 13.1676C11.3633 13.855 10.3631 14.325 9.2949 14.5366C8.22668 14.7481 7.12289 14.6948 6.08004 14.3813C5.03719 14.0677 4.08703 13.5034 3.31262 12.7378C2.53822 11.9722 1.96315 11.0286 1.6377 9.98935C1.31225 8.95015 1.24632 7.84704 1.44568 6.77647C1.64503 5.70591 2.10361 4.70047 2.78131 3.84807C3.45901 2.99567 4.3352 2.32226 5.33328 1.88672"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.6667 7.99992C14.6667 7.12444 14.4942 6.25753 14.1592 5.4487C13.8242 4.63986 13.3331 3.90493 12.714 3.28587C12.095 2.66682 11.3601 2.17575 10.5512 1.84072C9.74239 1.50569 8.87548 1.33325 8 1.33325V7.99992H14.6667Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_15421_1903">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <span class="ml-3">KPI Reports</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.33329 1.33325H3.99996C3.64634 1.33325 3.3072 1.47373 3.05715 1.72378C2.8071 1.97382 2.66663 2.31296 2.66663 2.66659V13.3333C2.66663 13.6869 2.8071 14.026 3.05715 14.2761C3.3072 14.5261 3.64634 14.6666 3.99996 14.6666H12C12.3536 14.6666 12.6927 14.5261 12.9428 14.2761C13.1928 14.026 13.3333 13.6869 13.3333 13.3333V5.33325L9.33329 1.33325Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.33337 1.33325V5.33325H13.3334"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.6667 8.66675H5.33337"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.6667 11.3333H5.33337"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.66671 6H6.00004H5.33337"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="ml-3">Templates</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 10C14 10.3536 13.8595 10.6928 13.6095 10.9428C13.3594 11.1929 13.0203 11.3333 12.6667 11.3333H4.66667L2 14V3.33333C2 2.97971 2.14048 2.64057 2.39052 2.39052C2.64057 2.14048 2.97971 2 3.33333 2H12.6667C13.0203 2 13.3594 2.14048 13.6095 2.39052C13.8595 2.64057 14 2.97971 14 3.33333V10Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="ml-3">Success Stories</span>
+          </a>
+        </li>
+      </ul>
+      <p class="p-4 font-[700] text-[14px] text-[#666687]">OTHERS</p>
+      <ul class="space-y-2 font-medium px-2">
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.78721 6.128C1.38721 6.312 0.377616 6.9152 0.249616 6.9968C0.172678 7.04454 0.109311 7.11126 0.0655999 7.19055C0.0218892 7.26985 -0.000695413 7.35905 1.63158e-05 7.4496V8.5504C-0.000544094 8.6423 0.0227493 8.73278 0.0676204 8.81298C0.112491 8.89319 0.177405 8.96038 0.256016 9.00799C0.425615 9.11519 1.40961 9.70239 1.79361 9.87679L2.28961 11.0768C2.12961 11.4992 1.84321 12.632 1.80961 12.7792C1.78944 12.8673 1.79208 12.9591 1.81727 13.0459C1.84247 13.1327 1.8894 13.2116 1.95361 13.2752L2.73121 14.0528C2.79498 14.1168 2.87392 14.1635 2.96066 14.1887C3.0474 14.2139 3.1391 14.2167 3.22721 14.1968L3.2474 14.1916C3.48786 14.1301 4.54489 13.8595 4.92961 13.7168L6.12961 14.2128C6.31361 14.6128 6.91681 15.6224 6.99841 15.7504C7.04671 15.8268 7.11356 15.8898 7.19272 15.9334C7.27189 15.977 7.36081 15.9999 7.45121 16H8.55041C8.64231 16.0006 8.73279 15.9773 8.81299 15.9324C8.8932 15.8875 8.96039 15.8226 9.00801 15.744C9.11521 15.5744 9.70241 14.5904 9.87681 14.2064L11.0768 13.7104C11.4992 13.8704 12.632 14.1568 12.7792 14.1904C12.8673 14.2106 12.9591 14.2079 13.0459 14.1827C13.1327 14.1575 13.2116 14.1106 13.2752 14.0464L14.0528 13.2688C14.1168 13.205 14.1635 13.1261 14.1887 13.0393C14.2139 12.9526 14.2167 12.8609 14.1968 12.7728L14.1916 12.7525C14.13 12.512 13.8595 11.4551 13.7168 11.0704L14.2128 9.87039C14.6128 9.68639 15.6224 9.08319 15.7504 9.00159C15.8268 8.95329 15.8898 8.88645 15.9334 8.80728C15.977 8.72811 16 8.63919 16 8.5488V7.4496C15.9999 7.35866 15.9765 7.26927 15.9319 7.18998C15.8874 7.1107 15.8232 7.04418 15.7456 6.9968C15.576 6.8896 14.592 6.3024 14.208 6.128L13.712 4.928C13.872 4.5056 14.1584 3.3728 14.192 3.2256C14.2122 3.1375 14.2095 3.04571 14.1843 2.95892C14.1591 2.87213 14.1122 2.7932 14.048 2.7296L13.2704 1.9472C13.2066 1.88324 13.1277 1.83648 13.041 1.8113C12.9542 1.78612 12.8625 1.78333 12.7744 1.8032L12.7542 1.80837C12.5137 1.86992 11.4567 2.14048 11.072 2.2832L9.87201 1.7872C9.68801 1.3872 9.08481 0.3776 9.00321 0.2496C8.9549 0.173188 8.88806 0.110234 8.80889 0.0665935C8.72972 0.0229535 8.64081 4.52862e-05 8.55041 0H7.44961C7.35867 9.96616e-05 7.26928 0.0235439 7.19 0.0680877C7.11072 0.112631 7.0442 0.176783 6.99681 0.2544C6.88961 0.424 6.30241 1.408 6.12801 1.792L4.92801 2.288C4.50561 2.128 3.37281 1.8416 3.22561 1.808C3.13752 1.78782 3.04573 1.79046 2.95893 1.81566C2.87214 1.84086 2.79321 1.88778 2.72961 1.952L1.94721 2.7296C1.88325 2.79337 1.8365 2.87231 1.81132 2.95905C1.78613 3.04579 1.78335 3.13749 1.80321 3.2256C1.80472 3.23149 1.80645 3.23824 1.80839 3.2458C1.86994 3.48627 2.1405 4.54328 2.28321 4.928L1.78721 6.128ZM8 11.3333C9.84095 11.3333 11.3333 9.84095 11.3333 8C11.3333 6.15905 9.84095 4.66667 8 4.66667C6.15905 4.66667 4.66667 6.15905 4.66667 8C4.66667 9.84095 6.15905 11.3333 8 11.3333Z"
+                fill="currentColor"
+              />
+            </svg>
+
+            <span class="ml-3">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="text-[#8E8EA9]">
+      <hr class="h-[1.5px] my-4 mx-4 bg-[#8E8EA9] border-0" />
+      <ul class="space-y-2 font-medium px-2">
+        <li>
+          <a
+            href="{% url 'logout' %}"
+            class="flex items-center p-2 rounded-lg hover:text-[#666687]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.33333 7.3335H8.66667V8.66683H3.33333V10.6668L0 8.00016L3.33333 5.3335V7.3335ZM2.66667 12.0002H4.472C5.24179 12.6791 6.19112 13.1214 7.20608 13.2741C8.22105 13.4268 9.25852 13.2835 10.194 12.8612C11.1295 12.4389 11.9233 11.7556 12.48 10.8934C13.0368 10.0311 13.333 9.02655 13.333 8.00016C13.333 6.97378 13.0368 5.96919 12.48 5.10696C11.9233 4.24472 11.1295 3.56146 10.194 3.13916C9.25852 2.71687 8.22105 2.57348 7.20608 2.7262C6.19112 2.87893 5.24179 3.32127 4.472 4.00016H2.66667C3.28711 3.17161 4.09222 2.49917 5.01805 2.03626C5.94387 1.57335 6.9649 1.33272 8 1.3335C11.682 1.3335 14.6667 4.31816 14.6667 8.00016C14.6667 11.6822 11.682 14.6668 8 14.6668C6.9649 14.6676 5.94387 14.427 5.01805 13.9641C4.09222 13.5012 3.28711 12.8287 2.66667 12.0002Z"
+                fill="currentColor"
+              />
+            </svg>
+
+            <span class="ml-3">Sign Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>

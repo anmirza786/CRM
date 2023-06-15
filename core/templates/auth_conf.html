@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Confirm OTP{% endblock %} 
+{% block authPages %}
+
+<div class="flex">
+  <div class="w-full md:w-1/2">
+    <div class="flex justify-center flex-col items-center">
+      <div
+        class="flex justify-center w-[70%] items-center flex-col text-center lg:mt-[100px] md:mt-[50px] mt-[40px]"
+      >
+        <img src="{% static 'img/logo.svg' %}" alt="Logo" />
+        <h2 class="text-[#32324D] font-[700] text-[32px]">
+          OTP Authentication
+        </h2>
+        <p class="text-[#666687] font-[400] text-[24px]">
+          Please enter the four digit verification code we have sent to your
+          email.
+        </p>
+      </div>
+      <form
+        id="otpForm"
+        class="w-[70%] lg:mt-[110px] md:mt-[90px] mt-[60px]"
+        method="POST"
+        onsubmit="submitForm()"
+      >
+      {% csrf_token %}
+        <div class="userInput pin mb-6 flex justify-between text-[#4945FF]">
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+            autofocus
+          />
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+          />
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+          />
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+          />
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+          />
+          <input
+            class="shadow text-center appearance-none border rounded w-[14%] h-[48px] py-2 px-2 text-[#4945FF] leading-tight focus:outline-[#4945FF] focus:outline-[0.6px] focus:shadow-outline"
+            type="text"
+            name="pass[]"
+            placeholder="-"
+            maxlength="1"
+            autocomplete="off"
+            required
+            pattern="\d{1}"
+          />
+        </div>
+        <input
+          type="text"
+          id="code"
+          name="code"
+          maxlength="6"
+          style="display: none"
+        />
+        <button
+          class="bg-[#4945FF] w-full hover:bg-[#27329f] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Verify & Proceed
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 md:block hidden bg-[#6172F3]">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div
+            class="w-full h-[100vh] flex flex-col items-center justify-center"
+          >
+            <img src="{% static 'img/otp.png'%}" alt="otp" class="w-[65%]" />
+            <div class="text-center pt-10 text-white">
+              <p class="text-[22px] font-[700]">It's just OTP verification</p>
+              <p class="text-[16px] font-[500]">
+                You are one step away from accessing your account.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div
+            class="w-full h-[100vh] flex flex-col items-center justify-center"
+          >
+            <img src="{% static 'img/connectwithanydevice.png'%}" alt="connectwithanydevice" class="w-[65%]" />
+            <div class="text-center pt-10 text-white">
+              <p class="text-[22px] font-[700]">Connect with any device.</p>
+              <p class="text-[16px] font-[500]">
+                Everything you need is an internet connection.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div
+            class="w-full h-[100vh] flex flex-col items-center justify-center"
+          >
+            <img src="{% static 'img/joinus.png' %}" alt="joinus" class="w-[65%]" />
+            <div class="text-center pt-10 text-white">
+              <p class="text-[22px] font-[700]">Join us!</p>
+              <p class="text-[16px] font-[500]">
+                Just go through the boring process of creating an account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

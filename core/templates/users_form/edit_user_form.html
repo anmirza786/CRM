@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% load widget_tweaks %} 
+{% load static %} {% block title %}Add User
+{% endblock %} {% block content %}
+<div id="addUserForm">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <button onclick="goBack()" type='button' class="text-[#4945FF] pb-2" id="backButton2">
+          <i class="fa fa-arrow-left"></i> Back
+        </button>
+        <h1 class="text-[#32324D] font-[700] text-[32px]">Add User</h1>
+      </div>
+      <div class="inline-flex">
+        <button
+          type="reset"
+          class="mx-4 border border-[#DCDCE4] bg-[#ffffff] px-[12px] py-[8px] rounded-[4px] hover:bg-[#DCDCE4]"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="text-[#ffffff] bg-[#4945FF] px-[12px] py-[8px] rounded-[4px] hover:bg-[#27329f]"
+        >
+          <i class="fa-solid fa-check"></i> Add User
+        </button>
+      </div>
+    </div>
+    <div
+      class="border-[0.5px] rounded-[4px] border-[#EAEAEF] px-7 py-7 bg-[#ffffff]"
+    >
+      <p class="mb-3 pl-4">User Details</p>
+
+      <div class="flex flex-wrap">
+        <div class="mb-6 md:w-1/2 w-full px-4">
+          <label
+            for="firstname"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >First Name*</label
+          >
+          {% render_field form.first_name placeholder='Jhon' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %}
+          {% if form.first_name.errors %}
+          <small class="form-text" style="color: red">{{ form.first_name.errors }}</small>
+          {% endif %}
+        </div>
+        <div class="mb-6 md:w-1/2 w-full px-4">
+          <label
+            for="lastname"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Last Name*</label
+          >
+          {% render_field form.last_name placeholder='Doe' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %}
+          {% if form.last_name.errors %}
+          <small class="form-text" style="color: red">{{ form.last_name.errors }}</small>
+          {% endif %}
+        </div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="mb-6 md:w-1/2 w-full px-4">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Email*</label
+          >
+          {% render_field form.email placeholder='username@example.com' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %}
+          {% if form.email.errors %}
+          <small class="form-text" style="color: red">{{ form.email.errors }}</small>
+          {% endif %}
+        </div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="mb-6 md:w-1/2 w-full px-4">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Active</label
+          >
+          <div class="btn-container">
+            <label class="switch btn-color-mode-switch">
+              {% render_field form.is_active type="checkbox" name="color_mode" id="color_mode" value="1" %}
+              <label
+                for="color_mode"
+                data-on="True"
+                data-off="False"
+                class="btn-color-mode-switch-inner"
+              ></label>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="border-[0.5px] mt-10 rounded-[4px] border-[#EAEAEF] px-7 py-7 bg-[#ffffff]"
+    >
+      <p class="mb-3 pl-4">User Details</p>
+
+      <div class="flex flex-wrap">
+        <div class="mb-6 md:w-1/2 w-full px-4">
+          <label
+            for="countries"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >User Roles*</label
+          >
+          {% render_field form.role class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%}
+          {% if form.role.errors %}
+          <small class="form-text" style="color: red">{{ form.role.errors }}</small>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -63,3 +63,5 @@ els(".pin").forEach((elGroup) => {
 //   code.value = otpValue;
 //   document.getElementById("otpForm").submit();
 // }
+
+

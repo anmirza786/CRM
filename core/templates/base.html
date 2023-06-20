@@ -23,23 +23,34 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.min.js"></script>
   </head>
   <body class="bg-[#F6F6F9] max-h-[100vh]">
-    {% if is_auth_page %}
-    {% else %}   
-      {% include 'navbar.html' %}
-      {% include 'sidebar.html' %} 
-    {% endif %} 
-    {% if not is_auth_page %} 
-      <div class="p-4 sm:ml-64">
+    {% if is_auth_page %} {% else %} {% include 'navbar.html' %} {% include 'sidebar.html' %} {% endif %} {% if not is_auth_page %}
+    <div class="p-4 sm:ml-64">
+      <div class="p-4 mt-20" id="settingsContainer">
         {% block content %} {% endblock %}
       </div>
-    {% endif %} 
-    {% block authPages %} {% endblock %}
+    </div>
+    {% endif %} {% block authPages %} {% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    {% if is_auth_page %}
     <script src="{% static 'js/script.js' %}"></script>
-    {% block script %}{% endblock %}
+    {% endif %} {% block script %}{% endblock %}
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>

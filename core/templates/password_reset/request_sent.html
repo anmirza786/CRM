@@ -1,0 +1,93 @@
+
+{% load static %}{% load widget_tweaks %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Forget Password</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<style>
+    .swiper {
+        width: 100%;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 20px !important;
+        border-radius: 20px !important;
+        background-color: white;
+    }
+</style>
+
+<body>
+<div class="flex">
+    <div class="w-full md:w-1/2 h-[100vh]">
+        <div class="flex justify-center h-full flex-col items-center">
+            <div
+                class="flex justify-center w-[70%] items-center flex-col  text-center">
+                <h2 class="text-[#32324D] font-[700] text-[32px]">Password Reset Request Sent 🤗.</h2>
+                <p class="text-[#666687] font-[400] text-[24px]">An email has been sent to your email address with further instructions to reset your password. Please check your inbox.</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-full md:w-1/2 md:block hidden bg-[#6172F3]">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                        <img src="{% static '/img/fogetpasswor.png' %}" alt="Hello" class="w-[65%]">
+                        <div class="text-center pt-10 text-white">
+                            <p class="text-[22px] font-[700]">Forgot your password?</p>
+                            <p class="text-[16px] font-[500]">You can get them back easily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                        <img src="{% static '/img/joinus.png' %}" alt="Hello" class="w-[65%]">
+                        <div class="text-center pt-10 text-white">
+                            <p class="text-[22px] font-[700]">Join us!</p>
+                            <p class="text-[16px] font-[500]">Just go through the boring process of creating an
+                                account.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                        <img src="{% static '/img/otp.png' %}" alt="Hello" class="w-[65%]">
+                        <div class="text-center pt-10 text-white">
+                            <p class="text-[22px] font-[700]">2 Factor Security</p>
+                            <p class="text-[16px] font-[500]">OTP is received during login to ensure exclusive
+                                access to the user's account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+
+</html>

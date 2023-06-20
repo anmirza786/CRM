@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}{% load widget_tweaks %} 
+{% block title %}Confirm Password{% endblock %} 
+{% block authPages %}
+<div class="flex">
+  <div class="w-full md:w-1/2">
+      <div class="flex justify-center flex-col items-center">
+          <div
+              class="flex justify-center w-[70%] items-center flex-col  text-center lg:mt-[100px] md:mt-[50px] mt-[40px]">
+              <h2 class="text-[#32324D] font-[700] text-[32px]">Change Password</h2>
+              <p class="text-[#666687] font-[400] text-[24px]">Input your new desired password in the input fields
+                  below to create a new password.</p>
+                  
+          </div>
+          <form class="w-[70%] lg:mt-[110px] md:mt-[90px] mt-[60px]" method="POST">
+            {% csrf_token %}
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                      Password
+                  </label>
+                  {% render_field form.password class="shadow appearance-none border rounded w-full h-[48px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="••••••••" %}
+                  {% if form.password.errors %}
+                  <small class="form-text" style="color: red">{{ form.first_name.errors }}</small>
+                  {% endif %}
+              </div>
+              <div class="mb-4">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password2">
+                      Confirm Password
+                  </label>
+                  {% render_field form.confirm_password  class="shadow appearance-none border rounded w-full h-[48px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="••••••••" %}
+                  {% if form.confirm_password.errors %}
+                  <small class="form-text" style="color: red">{{ form.first_name.errors }}</small>
+                  {% endif %}
+              </div>
+
+              <button
+                  class="bg-[#4945FF] w-full hover:bg-[#27329f] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="submit">
+                  Change password
+              </button>
+          </form>
+      </div>
+  </div>
+  <div class="w-full md:w-1/2 md:block hidden bg-[#6172F3]">
+      <div class="swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                      <img src="{% static '/img/chnage-passwor.png' %}" alt="Hello" class="w-[65%]">
+                      <div class="text-center pt-10 text-white">
+                          <p class="text-[22px] font-[700]">This is the end!</p>
+                          <p class="text-[16px] font-[500]">After entering the new password you will gain access
+                              to your account.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                      <img src="{% static '/img/connectwithanydevice.png' %}" alt="Hello" class="w-[65%]">
+                      <div class="text-center pt-10 text-white">
+                          <p class="text-[22px] font-[700]">Connect with any device.</p>
+                          <p class="text-[16px] font-[500]">Everything you need is an internet connection.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="w-full h-[100vh] flex flex-col items-center justify-center">
+                      <img src="{% static '/img/joinus.png' %}" alt="Hello" class="w-[65%]">
+                      <div class="text-center pt-10 text-white">
+                          <p class="text-[22px] font-[700]">Join us!</p>
+                          <p class="text-[16px] font-[500]">Just go through the boring process of creating an
+                              account.</p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+</div>
+{% endblock %}

@@ -9,6 +9,7 @@ class RolesENUM(models.IntegerChoices):
 class Role(models.Model):
     name = models.CharField(max_length=10,
                             blank=False, null=False)
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

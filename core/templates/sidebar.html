@@ -1,4 +1,6 @@
-{% url 'dashboard' as dashboard %}
+{% url 'dashboard' as dashboard %} {% url 'settings' as settings %} 
+{% url 'users' as users %} {% url 'add-user' as adduser %}
+{% url 'roles' as roles %}
 <aside
   id="logo-sidebar"
   class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
@@ -208,8 +210,8 @@
       <ul class="space-y-2 font-medium px-2">
         <li>
           <a
-            href="#"
-            class="flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
+            href="{% url 'settings' %}"
+            class="{% if request.path == settings or request.path == roles or request.path == users or request.path == adduser %}active-dashboard{% endif %} flex items-center p-2 rounded-lg hover:bg-[#4945FF] hover:text-[#ffffff]"
           >
             <svg
               width="16"

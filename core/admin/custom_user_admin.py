@@ -6,7 +6,8 @@ from core.models import UserAccount
 class UserAdmin(admin.ModelAdmin):
     list_display = [
         'email',
-        'name',
+        'first_name',
+        'last_name',
         'is_active',
     ]
 

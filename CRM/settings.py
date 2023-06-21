@@ -55,10 +55,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'CRM.urls'
 
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'bbc9b816f3b746'
-EMAIL_HOST_PASSWORD = '711642a77a71f1'
-EMAIL_PORT = '2525'
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'bbc9b816f3b746'
+# EMAIL_HOST_PASSWORD = '711642a77a71f1'
+# EMAIL_PORT = '2525'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'anmirza37@gmail.com'
+EMAIL_HOST_PASSWORD = 'upolpzxkmekfzqqi'
 
 LOGIN_REDIRECT_URL = '/login'
 LOGIN_URL = '/login'
